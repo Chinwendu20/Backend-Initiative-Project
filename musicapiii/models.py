@@ -26,6 +26,9 @@ class Movies(models.Model):
 	class Meta:
 		unique_together=(('Title', 'Producer', 'Genre', 'Cast', 'Director', 'Year_of_production'))
 
+	def __str__(self):
+		return self.Title
+
 
 class Rentals(models.Model):
 	Purchase_price=models.PositiveIntegerField()
